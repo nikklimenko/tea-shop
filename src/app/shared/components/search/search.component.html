@@ -1,0 +1,17 @@
+<form class="d-flex" role="search">
+  <input
+    [(ngModel)]="model"
+    id="typeahead-focus"
+    type="search"
+    class="form-control me-2 pe-2"
+    name="search"
+    [ngbTypeahead]="search"
+    (focus)="focus$.next($any($event).target.value)"
+    (click)="click$.next($any($event).target.value)"
+    #instance="ngbTypeahead"
+    placeholder="Поиск"
+    (search)="clearSearch()"
+  />
+  <button class="btn btn-outline-primary" routerLink="/catalog" [queryParams]="{search: model}" (click)="clickSearch()">Найти</button>
+</form>
+

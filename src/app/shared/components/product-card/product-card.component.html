@@ -1,0 +1,13 @@
+<div>
+  <div class="card">
+    <a data-fancybox data-src="./images/card-img-2.png">
+      <img src="{{product.image}}" class="card-img-top" alt="tea">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text">{{product.description | maxStrLength }}</p>
+      <p class="card-text">Цена: {{product.price | currency: 'руб.'}}</p>
+      <a href="#" class="btn btn-primary hvr-outline-out" [routerLink]="['/products', product.id]">Подробнее</a>
+    </div>
+  </div>
+</div>

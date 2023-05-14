@@ -1,0 +1,30 @@
+$accordion-btn-icon: url('../../../assets/images/arrow-up.png');
+$accordion-btn-active-icon: url('../../../assets/images/arrow-down.png');
+
+.accordion-item{
+  border: none;
+  margin-bottom: 20px;
+}
+
+.accordion-button {
+  font-size: 24px;
+  color: #fff;
+  background: linear-gradient(360deg, #076BFF 0%, #007BFF 100%);
+  border-radius: 10px;
+}
+
+.accordion-button:first-of-type{
+  border-radius: 10px;
+}
+
+.accordion-button{
+}
+
+.accordion-button::after{
+  background-image: $accordion-btn-active-icon;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: $accordion-btn-active-icon;
+}
+

@@ -1,0 +1,12 @@
+<section class="cards pt-5 pb-5 wow animate__zoomIn">
+  <div class="container-xxl container-xl container-lg">
+    <h2 class="fw-bold mb-5 text-center">{{catalogTitle}}</h2>
+    <div class="row">
+      <product-card-component class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products" [product]="product"></product-card-component>
+      <div class="col-sm-12" *ngIf="isSearchNotResult"><h3 class="text-center">Ничего не найдено</h3></div>
+    </div>
+    <div *ngIf="loading" class="loader-bg">
+      <div class="loader"></div>
+    </div>
+  </div>
+</section>
