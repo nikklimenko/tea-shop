@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,11 @@ import {OrderModule} from "./views/order/order.module";
 import {SharedModule} from "./shared/shared.module";
 import {FooterComponent} from "./shared/layout/footer/footer.component";
 import {HeaderComponent} from "./shared/layout/header/header.component";
+
+import localeRu from "@angular/common/locales/ru";
+import {registerLocaleData} from "@angular/common";
+
+registerLocaleData(localeRu, 'ru');
 
 @NgModule({
   declarations: [
@@ -32,7 +37,7 @@ import {HeaderComponent} from "./shared/layout/header/header.component";
     AppRoutingModule
 
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: 'ru'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
